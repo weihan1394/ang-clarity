@@ -23,6 +23,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  // define the index.html component
+  bootstrap: [
+    NavbarComponent]
 })
 export class AppModule { }
