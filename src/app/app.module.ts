@@ -25,6 +25,6 @@ import { NavbarComponent } from './navbar/navbar.component';
   providers: [],
   // define the index.html component
   bootstrap: [
-    NavbarComponent]
+    HomeComponent]
 })
 export class AppModule { }
