@@ -28,7 +28,8 @@ import { AutofocusDirective } from './directive/autofocus.directive';
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   // define the index.html component
