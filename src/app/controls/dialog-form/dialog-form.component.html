@@ -1,14 +1,23 @@
-<clr-modal [(clrModalOpen)]="isModalVisible">
-    <h3 class="modal-title">Create Ubuntu AWS instance</h3>
-    <div class="modal-body">
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit();">
+    <clr-modal [(clrModalOpen)]="show">
+        <div class="modal-title">Edit user</div>
 
-       
+        <div class="modal-body">
+            <section class="form-block">
+                <div class="form-group ">
+                    <label>First name</label>
+                    <input type="text" name="firstName" autofocus *ngIf="user" [(ngModel)]="user.firstName" placeholder="first name" (keypress)="onKeyPress($event)" required>
+                </div>
+                <div class="form-group ">
+                    <label>Last name</label>
+                    <input type="text" name="lastName" *ngIf="user" [(ngModel)]="user.lastName" placeholder="last name" (keypress)="onKeyPress($event)" required>
+                </div>
+            </section>
+        </div>
 
-
-
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn" (click)="isModalVisible = false">Cancel</button>
-        <button type="button" class="btn" (click)="deleteOrder()">Delete</button>
-    </div>
-</clr-modal>
+        <div class="modal-footer">
+            <button (click)="close()" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+    </clr-modal>
+</form>

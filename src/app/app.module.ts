@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule, RoutingComponent } from './app-routing.module';
 import { ClarityModule } from '@clr/angular';
@@ -10,6 +11,7 @@ import { NavbarHeaderComponent } from './controls/navbar-header/navbar-header.co
 import { NavbarSideComponent } from './controls/navbar-side/navbar-side.component';
 import { TemplateDefaultComponent } from './template/template-default/template-default.component';
 import { DialogFormComponent } from './controls/dialog-form/dialog-form.component';
+import { AutofocusDirective } from './directive/autofocus.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { DialogFormComponent } from './controls/dialog-form/dialog-form.componen
     NavbarHeaderComponent,
     NavbarSideComponent,
     TemplateDefaultComponent,
-    DialogFormComponent
+    DialogFormComponent,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,

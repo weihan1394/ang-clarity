@@ -23,16 +23,12 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
-                        <span>.col-sm-12 .col-md-6</span>
-                    </div>
-                    <div class="col">
-                        <span>.col-sm-12 .col-md-6</span>
-                    </div>
+                    <div>First name: {{user.firstName}}</div>
+                    <div>Last name: {{user.lastName}}</div>
                 </div>
             </div>
             <div class="card-footer">
-                <a (click)="modal.open()" class="btn btn-sm btn-link">Request</a>
+                <a (click)="modal.open(user)" class="btn btn-sm btn-link">Request</a>
                 <app-dialog-form></app-dialog-form>
             </div>
         </div>
