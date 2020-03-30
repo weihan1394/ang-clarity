@@ -39,3 +39,14 @@
         </p>
     </div>
 </div>
+
+<div class="clr-row">
+    <div class="clr-col-12">
+        <json-schema-form [schema]="schema" [layout]="layout" [options]='jsonFormOptions' [framework]="'bootstrap-4'"
+            (onSubmit)="onSubmit($event)" (formSchema)="showFormSchemaFn($event)"
+            (formLayout)="showFormLayoutFn($event)">
+        </json-schema-form>
+
+        <pre>{{submittedFormData | json}}</pre>
+    </div>
+</div>
