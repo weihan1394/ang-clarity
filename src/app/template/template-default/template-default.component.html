@@ -1,0 +1,20 @@
+<clr-main-container>
+    <app-navbar-header></app-navbar-header>
+    <div class="content-container">
+        <clr-vertical-nav [clr-nav-level]="1">
+            <a clrVerticalNavLink routerLink="/home" class="active">
+                <clr-icon shape="Home" class="nav-icon"></clr-icon> Home
+            </a>
+            <a clrVerticalNavLink routerLink="/about">
+                <clr-icon shape="help-info" class="nav-icon"></clr-icon> About
+            </a>
+            <div class="nav-divider"></div>
+            <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">Credit</a>
+        </clr-vertical-nav>
+        <!-- <app-navbar-side></app-navbar-side> -->
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</clr-main-container>

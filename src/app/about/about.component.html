@@ -1,0 +1,36 @@
+<div class="clr-row">
+    <div class="clr-col">
+        <p class="p2">About
+        </p>
+    </div>
+</div>
+
+<div class="clr-row">
+    <div class="clr-col-lg-3 clr-col-md-4" *ngFor="let form of forms;">
+        <div class="card">
+            <div class="card-block">
+                <div class="card-media-block">
+                    <img src="assets/icon/ubuntu.png" class="card-media-image">
+                    <div class="card-media-description">
+                        <span class="card-media-title">
+                            AWS Ubuntu
+                        </span>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <!-- {{form.description}} -->
+                    Azure AWS Ubuntu
+                </div>
+
+                <div class="row">
+                    <div>First name: {{user.firstName}}</div>
+                    <div>Last name: {{user.lastName}}</div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a (click)="modal.open(user)" class="btn btn-sm btn-link">Request</a>
+                <app-dialog-form></app-dialog-form>
+            </div>
+        </div>
+    </div>
+</div>
