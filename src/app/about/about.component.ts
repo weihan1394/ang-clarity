@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
       let form = new Form;
       form.name = "name " + index;
 
-      form.description = ""
+      form.description = "description " + index;
 
       this.forms.push(form)
     }

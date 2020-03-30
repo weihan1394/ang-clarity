@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChildren, ViewChild, AfterViewInit, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { AutofocusDirective } from '../../directive/autofocus.directive';
-import { User } from '../../models/user';
+import { Form } from '../../models/form';
 
 @Component({
   selector: 'app-dialog-form',
@@ -10,15 +10,15 @@ import { User } from '../../models/user';
 export class DialogFormComponent {
 
   @ViewChild(AutofocusDirective) autofocus: AutofocusDirective;
-  @Output() onOK: EventEmitter<User> = new EventEmitter<User>();
+  @Output() onOK: EventEmitter<Form> = new EventEmitter<Form>();
 
   show = false;
 
-  user: User;
+  form: Form;
 
-  open(user: User) {
+  open(form: Form) {
     this.show = true;
-    this.user = Object.create(user); // clone the user (we don't want to modify the original in the dialog)
+    this.form = Object.create(form);
 
     setTimeout(() => {
       if (this.autofocus) {
@@ -31,13 +31,17 @@ export class DialogFormComponent {
     this.show = false;
   }
 
+  // disable the default action to close the modal popout after enter keypress
   onKeyPress(event) {
     if (event.keyCode === 13) {
-      this.onOK.emit(this.user);
+      event.preventDefault();
+      return false;
     }
   }
 
   onSubmit() {
-    this.onOK.emit(this.user);
+    console.log("done");
+    this.onOK.emit(this.form);
+    this.show = false;
   }
 }

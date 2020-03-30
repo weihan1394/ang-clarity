@@ -1,18 +1,19 @@
-<form novalidate #f="ngForm" (ngSubmit)="onSubmit();">
-    <clr-modal [(clrModalOpen)]="show">
+<form clrForm novalidate #f="ngForm" (ngSubmit)="onSubmit()">
+    <clr-modal [(clrModalOpen)]="show" [clrModalSize]="'lg'">
         <div class="modal-title">Edit user</div>
 
         <div class="modal-body">
-            <section class="form-block">
-                <div class="form-group ">
-                    <label>First name</label>
-                    <input type="text" name="firstName" autofocus *ngIf="user" [(ngModel)]="user.firstName" placeholder="first name" (keypress)="onKeyPress($event)" required>
-                </div>
-                <div class="form-group ">
-                    <label>Last name</label>
-                    <input type="text" name="lastName" *ngIf="user" [(ngModel)]="user.lastName" placeholder="last name" (keypress)="onKeyPress($event)" required>
-                </div>
-            </section>
+
+            <clr-input-container>
+                <label>Info 1:</label>
+                <input clrInput type="text" name="firstName" autofocus *ngIf="form" [(ngModel)]="form.name"
+                    placeholder="first name" (keypress)="onKeyPress($event)" required>
+            </clr-input-container>
+            <clr-input-container>
+                <label>Info 2:</label>
+                <input clrInput type="text" name="lastName" *ngIf="form" [(ngModel)]="form.description"
+                    placeholder="last name" (keypress)="onKeyPress($event)" required>
+            </clr-input-container>
         </div>
 
         <div class="modal-footer">
