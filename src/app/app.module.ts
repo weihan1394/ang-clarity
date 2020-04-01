@@ -13,8 +13,6 @@ import { TemplateDefaultComponent } from './template/template-default/template-d
 import { DialogFormComponent } from './controls/dialog-form/dialog-form.component';
 import { AutofocusDirective } from './directive/autofocus.directive';
 
-import { Bootstrap4FrameworkModule } from 'angular6-json-schema-form';
-
 
 @NgModule({
   declarations: [
@@ -32,8 +30,7 @@ import { Bootstrap4FrameworkModule } from 'angular6-json-schema-form';
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    FormsModule,
-    Bootstrap4FrameworkModule
+    FormsModule
   ],
   providers: [],
   // define the index.html component
